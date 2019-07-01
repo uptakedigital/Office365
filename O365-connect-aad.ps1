@@ -1,16 +1,20 @@
-## CIAOPS
-## Script provided as is. Use at own risk. No guarantees or warranty provided.
+<# CIAOPS
+Script provided as is. Use at own risk. No guarantees or warranty provided.
 
-## Description
-## Script designed to log into the Azure AD portal
+Description - Log into the Azure AD portal
 
-## Source - 
+Source - https://github.com/directorcia/Office365/blob/master/O365-connect-aad.ps1
 
-## Prerequisites = 1
-## 1. Ensure azuread module installed or updated
+Prerequisites = 1
+1. Ensure azuread module installed or updated
+
+More scripts available by joining http://www.ciaopspatron.com
+
+#>
 
 ## Variables
 $systemmessagecolor = "cyan"
+$processmessagecolor = "green"
 $savedcreds=$false                      ## false = manually enter creds, True = from file
 $credpath = "c:\downloads\tenant.xml"   ## local file with credentials if required
 
@@ -19,14 +23,10 @@ $credpath = "c:\downloads\tenant.xml"   ## local file with credentials if requir
 
 Clear-Host
 
-write-host -foregroundcolor green "Script started"
+write-host -foregroundcolor $systemmessagecolor "Script started`n"
 
-## ensure that install-module azuread has been run
-## ensure that update-module azuread has been run to get latest module
-## https://www.powershellgallery.com/packages/AzureAD/
-## Current version = 2.0.1.16, 21 June 2018
 import-module azuread
-write-host -foregroundcolor green "AzureAD module loaded"
+write-host -foregroundcolor $processmessagecolor "AzureAD module loaded"
 
 ## Get tenant login credentials
 if ($savedcreds) {
@@ -40,4 +40,5 @@ else {
 
 ## Connect to AzuerAD service
 Connect-azuread -credential $cred
-write-host -foregroundcolor green "Now connected to Azure AD Service"
+write-host -foregroundcolor $processmessagecolor "Now connected to Azure AD Service`n"
+write-host -foregroundcolor $systemmessagecolor "Script Completed`n"

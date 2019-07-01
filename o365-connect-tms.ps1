@@ -1,32 +1,32 @@
-## CIAOPS
-## Script provided as is. Use at own risk. No guarantees or warranty provided.
+<# CIAOPS
+Script provided as is. Use at own risk. No guarantees or warranty provided.
 
-## Description
-## Script designed to log into Microsoft Teams
+Description - Log into Microsoft Teams
 
-## Source - https://github.com/directorcia/Office365/blob/master/o365-connect-tms.ps1
+Source - https://github.com/directorcia/Office365/blob/master/o365-connect-tms.ps1
 
-## Prerequisites = 1
-## 1. Ensure Micosoft Teams Module is install or updated
+Prerequisites = 1
+1. Ensure Micosoft Teams Module is install or updated
+
+More scripts available by joining http://www.ciaopspatron.com
+
+#>
 
 ## Variables
 $systemmessagecolor = "cyan"
+$processmessagecolor = "green"
 $savedcreds=$false                      ## false = manually enter creds, True = from file
 $credpath = "c:\downloads\tenant.xml"   ## local file with credentials if required
 
 ## If you have running scripts that don't have a certificate, run this command once to disable that level of security
-##  set-executionpolicy -executionpolicy bypass -scope currentuser -force
+## set-executionpolicy -executionpolicy bypass -scope currentuser -force
 
 Clear-Host
 
-write-host -foregroundcolor $systemmessagecolor "Script started"
+write-host -foregroundcolor $systemmessagecolor "Script started`n"
 
-## ensure that install-module -name microsoftteams has been run
-## ensure that update-module -name microsoftteams has been run to get latest module
-## https://www.powershellgallery.com/packages/MicrosoftTeams/
-## Current version = 0.9.3, 25 April 2018
 import-module MicrosoftTeams
-write-host -foregroundcolor $systemmessagecolor "Microsoft Teams module loaded"
+write-host -foregroundcolor $processmessagecolor "Microsoft Teams module loaded"
 
 ## Get tenant login credentials
 if ($savedcreds) {
@@ -40,4 +40,5 @@ else {
 
 ## Connect to Microsoft Teams service
 Connect-MicrosoftTeams -credential $cred
-write-host -foregroundcolor $systemmessagecolor "Now connected to Microsoft Teams Service"
+write-host -foregroundcolor $processmessagecolor "Now connected to Microsoft Teams Service`n"
+write-host -foregroundcolor $systemmessagecolor "Script Completed`n"

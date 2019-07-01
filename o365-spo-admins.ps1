@@ -1,32 +1,35 @@
-## CIAOPS
-## Script provided as is. Use at own risk. No guarantees or warranty provided.
+<# CIAOPS
+Script provided as is. Use at own risk. No guarantees or warranty provided.
 
-## Source - https://github.com/directorcia/Office365/blob/master/o365-spo-admins.ps1
+Source - https://github.com/directorcia/Office365/blob/master/o365-spo-admins.ps1
 
-## Description
-## Script designed to log into the show the all the SharePoint Online Site Collection Administrators across all site collections
+Description - Log into the show the all the SharePoint Online Site Collection Administrators across all site collections
 
-## Prerequisites = 1
-## 1. Ensure SharePoint online PowerShell module installed or updated
+Prerequisites = 1
+1. Ensure SharePoint online PowerShell module installed or updated
+
+More scripts available by joining http://www.ciaopspatron.com
+
+#>
 
 ## Variables
 $systemmessagecolor = "cyan"
-
+$processmessagecolor = "green"
 ## If you have running scripts that don't have a certificate, run this command once to disable that level of security
 ## set-executionpolicy -executionpolicy bypass -scope currentuser -force
 
 Clear-Host
 
-write-host -foregroundcolor $systemmessagecolor "Script started"
+write-host -foregroundcolor $systemmessagecolor "Script started`n"
 
 ## Ensure that SharePoint Online modeule has been installed and loaded
 
-Write-host -ForegroundColor $systemmessagecolor "Getting all Sharepoint sites in tenant"
+Write-host -ForegroundColor $processmessagecolor "Getting all Sharepoint sites in tenant"
 $SiteCollections  = Get-SPOSite -Limit All
 
 foreach ($site in $SiteCollections) ## Loop through all Site Collections in tenant
 {
-    Write-host -ForegroundColor Green "Checking site:",$site.url
+    Write-host -ForegroundColor $processmessagecolor "Checking site:",$site.url
 
     $siteusers = get-spouser -site $site.Url    ## get all users for that SharePoint site
     foreach ($siteuser in $siteusers){          ## loop through all the users in the site
@@ -36,4 +39,4 @@ foreach ($site in $SiteCollections) ## Loop through all Site Collections in tena
      }
      write-host
 }
-write-host -foregroundcolor $systemmessagecolor "Script complete"
+write-host -foregroundcolor $systemmessagecolor "Script completed`n"

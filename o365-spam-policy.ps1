@@ -1,17 +1,21 @@
-## CIAOPS
-## Script provided as is. Use at own risk. No guarantees or warranty provided.
-## Crowd source settings for filtering - http://blog.ciaops.com/2018/06/spam-filtering-in-office-365best.html
+<# CIAOPS
+Script provided as is. Use at own risk. No guarantees or warranty provided.
+Crowd source settings for filtering - http://blog.ciaops.com/2018/06/spam-filtering-in-office-365best.html
 
-## Source - https://github.com/directorcia/Office365/blob/master/o365-spam-policy.ps1
+Source - https://github.com/directorcia/Office365/blob/master/o365-spam-policy.ps1
 
-## Description
-## Script designed to configure a new Exchange Online spam filtering policy
+Description - Configure a new Exchange Online spam filtering policy
 
-## Prerequisites = 1
-## 1. Ensure Exchange online PowerShell module installed or updated
+Prerequisites = 1
+1. Ensure Exchange online PowerShell module installed or updated
+
+More scripts available by joining http://www.ciaopspatron.com
+
+#>
 
 ## Variables
 $systemmessagecolor = "cyan"
+$processmessagecolor = "green"
 ## Separate multiple domains with comma (,) e.g."domain1.com", "domain2.com", "domain3.com"
 $domains = "M365B555418.onmicrosoft.com"
 $policyname = "Configured Policy"
@@ -22,9 +26,9 @@ $rulename = "Configured Recipients"
 
 Clear-Host
 
-write-host -foregroundcolor $systemmessagecolor "Script started"
+write-host -foregroundcolor $systemmessagecolor "Script started'n"
 
-write-host -foregroundcolor $systemmessagecolor "Set new spam policy"
+write-host -foregroundcolor $processmessagecolor "Set new spam policy"
 
 $policyparams = @{
     "name" = $policyname;
@@ -55,7 +59,7 @@ $policyparams = @{
 
 new-hostedcontentfilterpolicy @policyparams
 
-write-host -foregroundcolor Cyan "Set new filter rule"
+write-host -foregroundcolor $processmessagecolor"Set new filter rule"
 
 $ruleparams = @{
     'name' = $rulename;
@@ -66,4 +70,4 @@ $ruleparams = @{
 
 New-hostedcontentfilterrule @ruleparams
 
-write-host -foregroundcolor $systemmessagecolor "Script complete"
+write-host -foregroundcolor $systemmessagecolor "Script completed`n"

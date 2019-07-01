@@ -1,12 +1,12 @@
 <# CIAOPS
 Script provided as is. Use at own risk. No guarantees or warranty provided.
 
-Description - Log into the Office 365 admin portal using MFA
+Description - Log into the Azure AD Rights Management module with MFA enabled
 
-## Source - https://github.com/directorcia/Office365/blob/master/o365-connect-mfa.ps1
+Source - https://github.com/directorcia/Office365/blob/master/o365-connect-mfa-aadrm.ps1
 
 Prerequisites = 1
-1. Ensure msonline module installed or updated
+1. Ensure AADRM module is installeed or updated
 
 More scripts available by joining http://www.ciaopspatron.com
 
@@ -23,10 +23,7 @@ Clear-Host
 
 write-host -foregroundcolor $systemmessagecolor "Script started`n"
 
-import-module msonline
-write-host -foregroundcolor $processmessagecolor "MSOnline module loaded"
-
-## Connect to Office 365 admin service
-connect-msolservice
-write-host -foregroundcolor $processmessagecolor "Now connected to Office 365 Admin service`n"
+## Connect to Azure AD Rights Management Service
+connect-aadrmservice
+write-host -foregroundcolor $processmessagecolor "Now connected to the Azure AD Rights Management Service`n"
 write-host -foregroundcolor $systemmessagecolor "Script Completed`n"
