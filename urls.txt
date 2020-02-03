@@ -22,7 +22,10 @@ https://forms.office.com - Microsoft Forms
 https://flow.microsoft.com - Microsoft Flow
 https://powerapps.microsoft.com - Microsoft PowerApps
 https://admin.microsoft.com/Adminportal/Home?source=applauncher#/setupwizard - Microsoft 365 Business Set up wizard
-
+https://<tenantname>-admin.sharepoint.com/_layouts/15/online/SiteCollections.aspx - Classic SharePoint Administration portal
+https://<tenantname>-admin.sharepoint.com/_layouts/15/online/AdminHome.aspx# - Modern SharePoint Administration portal
+https://config.office.com - Client configuration
+https://<tenantname>.sharepoint.com/sites/sitecollection/_layouts/15/StorMan.aspx - SharePoint Site Storage metrics
 
 ## Security 
 
@@ -36,6 +39,9 @@ https://security.microsoft.com/ - MIcrosoft 365 Security Center
 https://protection.office.com/gdprdashboard - GDPR Dashbaord
 https://securitycenter.windows.com - Microsoft Defender ATP Console
 https://sender.office.com/ - Office 365 Anti-Spam IP Delist Portal
+https://protection.office.com/managealerts - Activity Alerts
+https://protection.office.com/alertpolicies - Protection Alerts
+https://protection.office.com/reportsubmission - Submit security report
 
 
 ## Azure
@@ -44,6 +50,9 @@ https://portal.azure.com - Azure portal home page
 https://preview.portal.azure.com - Preview Azure portal home page
 https://shell.azure.com - Azure Cloud shell
 https://aad.portal.azure.com/ - Azure AD Administration
+https://account.activedirectory.windowsazure.com/ - User Azure AD portal
+https://portal.atp.azure.com - Azure ATP
+https://status.azure.com - Azure Status
 
 ## Partner
 
@@ -98,10 +107,13 @@ https://twitter.com/Azure - Microsoft Azure
 https://twitter.com/MSPowerBI - Microsoft PowerBI
 https://twitter.com/Office365_Tech - Office 365 Community
 https://twitter.com/SharePoint - Microsoft SharePoint
-https://twitter.com/AndroidAtMsft - Andoif at Microsoft
+https://twitter.com/AndroidAtMsft - Andoid at Microsoft
 
 
 ## Podcasts
 
 http://ciaops.podbean.com/ - CIAOPS Need to Know
 https://intrazone.libsyn.com/ - The Intrazone
+http://syncup.mpsn.libsynpro.com/ - Sync Up, A OneDrive Podcast
+https://www.messagecentershow.com/ - The Message Center Show
+https://podcasts.apple.com/us/podcast/microsoft-mechanics-podcast/id1181810899 - Microsoft Mechanics
