@@ -36,6 +36,9 @@ If ($currentPrincipal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administ
     Update-Module -Name Microsoft.Online.SharePoint.PowerShell -force
     write-host -foregroundcolor $processmessagecolor "Update Microsoft Online module"
     Update-Module -Name MSOnline -force
+    write-host -foregroundcolor $processmessagecolor "Update Exchange Online V2 module"
+    Update-Module PowershellGet -Force
+    Update-Module -Name ExchangeOnlineManagement -force
     write-host -foregroundcolor $processmessagecolor "Update Azure module"
     ## Old Azure module
     ## Update-Module -name AzureRM -Force
